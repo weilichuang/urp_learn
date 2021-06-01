@@ -1,5 +1,44 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8385526841457624600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b3d386ba5cd94485973aee1479b272e, type: 3}
+  m_Name: OcclusionEffect Alpha
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    passTag: OcclusionEffect Alpha
+    Event: 500
+    filterSettings:
+      RenderQueueType: 1
+      LayerMask:
+        serializedVersion: 2
+        m_Bits: 128
+      PassNames: []
+    overrideMaterial: {fileID: 2100000, guid: 4831745bc8fc14e93a6d8b2a57d9bc6d, type: 2}
+    overrideMaterialPassIndex: 0
+    overrideDepthState: 1
+    depthCompareFunction: 5
+    enableWrite: 0
+    stencilSettings:
+      overrideStencilState: 0
+      stencilReference: 0
+      stencilCompareFunction: 8
+      passOperation: 0
+      failOperation: 0
+      zFailOperation: 0
+    cameraSettings:
+      overrideCamera: 0
+      restoreCamera: 1
+      offset: {x: 0, y: 0, z: 0, w: 0}
+      cameraFieldOfView: 60
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12,9 +51,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f971995892640ec4f807ef396269e91e, type: 3}
   m_Name: OcclusionEffect_Renderer
   m_EditorClassIdentifier: 
+  debugShaders:
+    NumberFont: {fileID: 2800000, guid: f06a37246bbff114da01277637ca397e, type: 3}
+    debugReplacementPS: {fileID: 4800000, guid: cf852408f2e174538bcd9b7fda1c5ae7, type: 3}
   m_RendererFeatures:
   - {fileID: 5502740500323776050}
-  m_RendererFeatureMap: 3236f48c54a95d4c
+  - {fileID: -8385526841457624600}
+  m_RendererFeatureMap: 3236f48c54a95d4ce8396a20c49fa08b
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
@@ -26,6 +69,8 @@ MonoBehaviour:
     stencilDeferredPS: {fileID: 4800000, guid: e9155b26e1bc55942a41e518703fe304, type: 3}
     fallbackErrorPS: {fileID: 4800000, guid: e6e9a19c3678ded42a3bc431ebef7dbd, type: 3}
     materialErrorPS: {fileID: 4800000, guid: 5fd9a8feb75a4b5894c241777f519d4e, type: 3}
+    coreBlitPS: {fileID: 4800000, guid: 93446b5c5339d4f00b85c159e1159b7c, type: 3}
+    coreBlitColorAndDepthPS: {fileID: 4800000, guid: d104b2fc1ca6445babb8e90b0758136b, type: 3}
   m_OpaqueLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -52,19 +97,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b3d386ba5cd94485973aee1479b272e, type: 3}
-  m_Name: NewRenderObjects
+  m_Name: OcclusionEffect
   m_EditorClassIdentifier: 
   m_Active: 1
   settings:
-    passTag: NewRenderObjects
+    passTag: OcclusionEffect
     Event: 300
     filterSettings:
       RenderQueueType: 0
       LayerMask:
         serializedVersion: 2
-        m_Bits: 256
+        m_Bits: 384
       PassNames: []
-    overrideMaterial: {fileID: 2100000, guid: 4831745bc8fc14e93a6d8b2a57d9bc6d, type: 2}
+    overrideMaterial: {fileID: 2100000, guid: c9129746071208d4f816a08bfe995ea5, type: 2}
     overrideMaterialPassIndex: 0
     overrideDepthState: 1
     depthCompareFunction: 5
